@@ -15,7 +15,7 @@ export default {
   <div class="serchbox">
 
     <div class="input-group mb-3">
-      <input type="text" class="form-control" placeholder="Search something ..." v-model='store.searchText'
+      <input type="search" class="form-control" placeholder="Search something ..." v-model='store.searchMovie'
         @keyup="$emit('makeSearch')">
       <button class="btn btn-outline-secondary" type="button" @click="$emit('makeSearch')">Search</button>
     </div>

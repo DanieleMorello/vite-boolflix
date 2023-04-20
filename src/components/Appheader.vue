@@ -4,17 +4,27 @@ import SearchBox from './SearchBox.vue';
 
 export default {
   name: "AppHeader",
+  emits: ['makeSearch'],
   components: { SearchBox },
   data() {
     return {
       store,
     }
   },
+  methods: {
+    performSearch() {
+      const url = this.store.SEARCH_MOVIES_API_URL + `&query=${this.store.searchMovie}`
+      this.store.fetchMovies(url)
+    }
+  }
 }
 </script>
 <template>
   <header>
-    <h1>Boolflix</h1>
-    <SearchBox @makeSearch="performSearch()"></SearchBox>/>
+    <div class="logo">
+      <h1>Boolflix</h1>
+    </div>
+
+    <SearchBox @makeSearch="performSearch()">Search</SearchBox>
   </header>
 </template>
