@@ -15,13 +15,19 @@ export default {
   <main>
     <ul>
       <li v-for="result in store.results">
-        {{ result.title }}
-        {{ result.original_title }}
-        {{ result.original_language }}
-        {{ result.vote_average }}
+        <span>{{ result.title }}</span>
+        <span>{{ result.original_title }}</span>
+        <span>{{ result.original_language }}</span>
+        <img class="language_flag" :src="`https://unpkg.com/language-icons/icons/${result.original_language}.svg`">
+        <span>{{ result.vote_average }}</span>
       </li>
     </ul>
   </main>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.language_flag {
+  width: 30px;
+  aspect-ratio: 2 / 1;
+}
+</style>
