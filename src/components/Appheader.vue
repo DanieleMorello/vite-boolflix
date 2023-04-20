@@ -13,8 +13,10 @@ export default {
   },
   methods: {
     performSearch() {
-      const url = this.store.SEARCH_MOVIES_API_URL + `&query=${this.store.searchMovie}`
-      this.store.fetchMovies(url)
+      const urlMovies = this.store.SEARCH_MOVIES_API_URL + `&query=${this.store.searchMovie}`
+      this.store.fetchMovies(urlMovies)
+      const urlTv = this.store.SEARCH_SERIES_API_URL + `&query=${this.store.searchMovie}`
+      this.store.fetchMovies(urlTv)
     }
   }
 }

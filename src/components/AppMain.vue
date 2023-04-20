@@ -14,12 +14,23 @@ export default {
 <template>
   <main>
     <ul>
-      <li v-for="result in store.results">
-        <span>{{ result.title }}</span>
-        <span>{{ result.original_title }}</span>
+    <li v-for="result in store.results">
+      <h2>Film</h2>
+      <span>{{ result.title }}</span>
+      <span>{{ result.original_title }}</span>
         <span>{{ result.original_language }}</span>
         <img class="language_flag" :src="`https://unpkg.com/language-icons/icons/${result.original_language}.svg`">
         <span>{{ result.vote_average }}</span>
+      </li>
+    </ul>
+    <ul>
+      <li>
+        <h2>Serie</h2>
+        <!-- <span>{{ result.title }}</span>
+          <span>{{ result.original_title }}</span>
+          <span>{{ result.original_language }}</span>
+          <img class="language_flag" :src="`https://unpkg.com/language-icons/icons/${result.original_language}.svg`">
+          <span>{{ result.vote_average }}</span> -->
       </li>
     </ul>
   </main>

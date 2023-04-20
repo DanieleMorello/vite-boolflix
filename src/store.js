@@ -3,19 +3,38 @@ import axios from "axios";
 export const store = reactive({
   SEARCH_MOVIES_API_URL:
     "https://api.themoviedb.org/3/search/movie?api_key=0cdad7839165b3a45d1b472d26ea1c15",
+  SEARCH_SERIES_API_URL:
+    "https://api.themoviedb.org/3/search/tv?api_key=0cdad7839165b3a45d1b472d26ea1c15",
   searchMovie: "",
   movies: null,
-  results: null,
+  searchTv: "",
+  tv: null,
+  resultsMovie: null,
+  resultsTv: null,
   pagination: null,
   error: null,
   loading: true,
 
-  fetchMovies(url) {
+  fetchMovies(urlMovies) {
     axios
-      .get(url)
+      .get(urlMovies)
       .then((response) => {
         console.log(response.data);
-        this.results = response.data.results;
+        this.resultsMovie = response.data.resultsMovie;
+        this.loading = false;
+      })
+      .catch((err) => {
+        console.log(err);
+        console.error(err.message);
+        this.error = this.error.message;
+      });
+  },
+  fetchTv(urlTv) {
+    axios
+      .get(urlTv)
+      .then((response) => {
+        console.log(response.data);
+        this.resultsTv = response.data.resultsTv;
         this.loading = false;
       })
       .catch((err) => {
