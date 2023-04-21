@@ -5,6 +5,8 @@ export const store = reactive({
     "https://api.themoviedb.org/3/search/movie?api_key=0cdad7839165b3a45d1b472d26ea1c15",
   SEARCH_SERIES_API_URL:
     "https://api.themoviedb.org/3/search/tv?api_key=0cdad7839165b3a45d1b472d26ea1c15",
+  // IMAGE_API_URL: "https://image.tmdb.org/t/p/",
+  // size_image: "w342/",
   searchMovie: "",
   results: {
     movies: null,
@@ -23,7 +25,7 @@ export const store = reactive({
   //   return axios.get(urlSeries);
   // },
 
-  fetchResults(url) {
+  fetchResults(url, mediaType) {
     axios
       .get(url)
       .then((response) => {

@@ -13,47 +13,27 @@ export default {
 
 <template>
   <main>
-    <section v-for="(result, title) in store.results">
-      <h2>{{ title }}</h2>
-
-      <template v-if="result">
-        <div v-if="title === 'movies'">
-          {{ result.title }}
-          {{ result.original_title }}
-          {{ result.original_language }}
-          <img class="language_flag" :src="`https://unpkg.com/language-icons/icons/${result.original_language}.svg`">
-      </div>
-
-      <div v-else>
-        {{ result.name }}
-        {{ result.original_name }}
-      </div>
-
-      <div>
-        {{ result.vote_average }}
-      </div>
-    </template>
-  </section>
-    <!-- <ul>
-    <li v-for="result in store.results">
-      <h2>Film</h2>
-      <span>{{ result.title }}</span>
-      <span>{{ result.original_title }}</span>
-                                    <span>{{ result.original_language }}</span>
+    <section>
+      <h2>Movies</h2>
+      <div v-for="movie in store.results.movies">
+        {{ movie.title }}
+        {{ movie.title }}
+        {{ movie.original_title }}
+        {{ movie.original_language }}
         <img class="language_flag" :src="`https://unpkg.com/language-icons/icons/${result.original_language}.svg`">
-                                    <span>{{ result.vote_average }}</span>
-                                  </li>
-                                </ul>
-                                <ul>
-                                  <li>
-                                    <h2>Serie</h2> -->
-    <!-- <span>{{ result.title }}</span>
-                                      <span>{{ result.original_title }}</span>
-                                      <span>{{ result.original_language }}</span>
-                                      <img class="language_flag" :src="`https://unpkg.com/language-icons/icons/${result.original_language}.svg`">
-                                      <span>{{ result.vote_average }}</span> -->
-    <!-- </li>
-                                </ul> -->
+        {{ movie.vote_average }}
+      </div>
+    </section>
+
+    <section>
+      <h2>Series</h2>
+      <div v-for="serie in store.results.series">
+        {{ serie.title }}
+        {{ serie.name }}
+        {{ serie.original_name }}
+        {{ serie.vote_count }}
+      </div>
+    </section>
   </main>
 </template>
 
