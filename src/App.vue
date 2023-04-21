@@ -1,6 +1,6 @@
 <script>
 import { store } from './store'
-import AppHeader from './components/AppHeader'
+import AppHeader from './components/Appheader.vue'
 import AppMain from './components/AppMain.vue'
 import AppFooter from './components/AppFooter.vue'
 

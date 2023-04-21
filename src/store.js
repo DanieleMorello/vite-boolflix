@@ -23,7 +23,7 @@ export const store = reactive({
   //   return axios.get(urlSeries);
   // },
 
-  fetchResults() {
+  fetchResults(url) {
     axios
       .get(url)
       .then((response) => {
