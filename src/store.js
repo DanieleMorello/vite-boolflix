@@ -30,8 +30,11 @@ export const store = reactive({
       .get(url)
       .then((response) => {
         console.log(response.data);
-        this.results.movies = response.data.results.movies;
-        this.results.series = response.data.results.series;
+        if (mediaType == "movies") {
+          this.results.movies = response.data.results;
+        } else {
+          this.results.series = response.data.results;
+        }
         this.loading = false;
       })
       .catch((err) => {

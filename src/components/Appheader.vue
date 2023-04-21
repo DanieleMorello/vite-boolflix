@@ -13,8 +13,8 @@ export default {
   },
   methods: {
     performSearch() {
-      const urlMovies = `${this.store.SEARCH_MOVIES_API_URL}&query=${this.store.searchMovie}`;
-      const urlSeries = `${this.store.SEARCH_SERIES_API_URL}&query=${this.store.searchMovie}`;
+      const urlMovies = this.store.SEARCH_MOVIES_API_URL + `&query=${this.store.searchMovie}`;
+      const urlSeries = this.store.SEARCH_SERIES_API_URL + `&query=${this.store.searchMovie}`;
       this.store.fetchResults(urlMovies, 'movies')
       this.store.fetchResults(urlSeries, 'series')
     }

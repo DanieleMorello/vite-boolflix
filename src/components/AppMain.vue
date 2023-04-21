@@ -19,8 +19,7 @@ export default {
         {{ movie.title }}
         {{ movie.title }}
         {{ movie.original_title }}
-        {{ movie.original_language }}
-        <img class="language_flag" :src="`https://unpkg.com/language-icons/icons/${result.original_language}.svg`">
+        <img class="language_flag" :src="`https://unpkg.com/language-icons/icons/${movie.original_language}.svg`">
         {{ movie.vote_average }}
       </div>
     </section>
@@ -31,6 +30,7 @@ export default {
         {{ serie.title }}
         {{ serie.name }}
         {{ serie.original_name }}
+        <img class="language_flag" :src="`https://unpkg.com/language-icons/icons/${serie.original_language}.svg`">
         {{ serie.vote_count }}
       </div>
     </section>
@@ -40,6 +40,6 @@ export default {
 <style lang="scss" scoped>
 .language_flag {
   width: 30px;
-  aspect-ratio: 2 / 1;
+  // aspect-ratio: 2 / 1;
 }
 </style>
