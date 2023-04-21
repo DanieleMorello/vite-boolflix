@@ -13,10 +13,9 @@ export default {
   },
   methods: {
     performSearch() {
-      const urlMovies = this.store.SEARCH_MOVIES_API_URL + `&query=${this.store.searchMovie}`
-      this.store.fetchMovies(urlMovies)
-      const urlTv = this.store.SEARCH_SERIES_API_URL + `&query=${this.store.searchMovie}`
-      this.store.fetchMovies(urlTv)
+      const urlMovies = `${this.SEARCH_MOVIES_API_URL}&query=${this.store.searchMovie}`;
+      const urlSeries = `${this.SEARCH_SERIES_API_URL}&query=${this.store.searchMovie}`;
+      this.store.fetchResults(urlMovies, urlSeries)
     }
   }
 }
